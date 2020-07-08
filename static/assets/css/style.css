@@ -1,0 +1,13 @@
+.navbar-light .navbar-brand {
+    color: #ffffff !important;
+}
+
+.topnav .navbar-nav .nav-item .nav-link.active {
+    color: #ffffff !important;
+}
+
+.footer {
+    left: 0px;
+    background-color: #333547 !important;
+    color: #ffffff !important;
+}
