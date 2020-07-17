@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if data %}
+            <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <form class="custom-validation" action="" method="POST">
+                                            <div class="form-group">
+                                                <label>Area of Interest</label>
+                                                <input type="text" name="aoi" class="form-control" required placeholder="Enter Your Name" value="{{ data.aoi }}"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>DOB</label>
+                                                <div>
+                                                    <input type="date" name="dob"
+                                                            class="form-control" required
+                                                            placeholder="Enter DOB" value="{{ data.dob }}"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Age</label>
+                                                <div>
+                                                    <input data-parsley-type="number" type="text" name="age"
+                                                            class="form-control" required
+                                                            placeholder="Enter Age" value="{{ data.age }}"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Phone</label>
+                                                <div>
+                                                    <input data-parsley-type="number" type="text" name="phone"
+                                                            class="form-control" required
+                                                            placeholder="Enter Phone Number" value="{{ data.phone }}"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>State</label>
+                                                <div>
+                                                    <input data-parsley-type="text" type="text" name="state"
+                                                            class="form-control" required 
+                                                            placeholder="Enter state" value="{{ data.state }}"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>City</label>
+                                                <div>
+                                                    <input data-parsley-type="text" type="text"
+                                                            class="form-control" required name="city"
+                                                            placeholder="Enter city" value="{{ data.city }}"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Carrer Objective</label>
+                                                <div>
+                                                    <textarea required name="co" class="form-control" rows="5" placeholder="Enter Objective">{{ data.career }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-0">
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
+                                                        Submit
+                                                    </button>
+                                                    <button type="reset" class="btn btn-secondary waves-effect">
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+        
+                                    </div>
+                                </div>
+                            </div>
+            </div>    
+            {% else %}
+
+            <div class="content-center w-100">
+                    <div class="container">
+                        <div class="card mo-mt-2">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4 ml-auto">
+                                        <div class="ex-page-content">
+                                            <h1 class="text-dark display-1 mt-4">404!</h1>
+                                            <h4 class="mb-4">Sorry, page not found</h4>
+                                        </div>
+                            
+                                    </div>
+                                    <div class="col-lg-5 mx-auto">
+                                        <img src="{{ url_for('static', filename='assets/images/error.png') }}" alt="" class="img-fluid mx-auto d-block">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end container -->
+            </div>
+        
+        {% endif %}
+{% endblock %}

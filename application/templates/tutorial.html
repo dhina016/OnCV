@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="text-center faq-title pt-4 pb-4">
+                            <div class="pt-3 pb-3">
+                                <i class="ti-comments text-primary h3"></i>
+                            </div>
+                            <h4>New to OnCV?</h4>
+                            <p class="text-muted">Don't Panic. It's easy to create</p>
+                            <a href="{{ url_for('home.cv') }}" type="button" class="btn btn-primary mt-2 mr-1 waves-effect waves-light">Send Feedback</a>
+                            <p class="text-muted">Feel free to send feedback contact section</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <h5 class="mt-0 font-size-18 mb-4"><i class="ti-agenda text-primary mr-2"></i> STEPS</h5>
+                        <div class="accordion" id="accordionExample">
+                            <div class="card mb-0">
+                                <a data-toggle="collapse" href="#collapseOne" class="faq" aria-expanded="true" aria-controls="collapseOne">
+                                    <div class="card-header text-dark" id="headingOne">
+                                        <h6 class="m-0 font-size-16">About *</h6>
+                                    </div>
+                                </a>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">This is details about you like Area of Interest, Objective etc... About added only one time then you can only update</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- collapse one end -->
+
+                            <div class="card mb-0">
+                                <a data-toggle="collapse" href="#collapseTwo" class="faq collapsed" aria-expanded="false" aria-controls="collapseTwo">
+                                    <div class="card-header text-dark" id="headingTwo">
+                                        <h6 class="m-0 font-size-16">Education *</h6>
+                                    </div>
+                                </a>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">This is about your education and experience. If you don't have experience then leave it. This can accept multiple times so you can add school and college details. Postion is where you want to show your details. Eg postion 1 - School details, Postion = 2 College Details. Then in website 1st school details will be shown and then college. Position for formatting the details</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- collapse two end -->
+
+                            <div class="card mb-0">
+                                <a data-toggle="collapse" href="#collapseThree" class="faq collapsed" aria-expanded="false" aria-controls="collapseThree">
+                                    <div class="card-header text-dark" id="headingThree">
+                                        <h6 class="m-0 font-size-16">Skill *</h6>
+                                    </div>
+                                </a>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Skill Category for styling. Name = type of your skill like Technical,Language etc. You can pick your own syle like dotted, line etc. If any doubt check out my skills. Once add the category then you can add your skills. Icon Can give more styling. Select category then add your skill with percentage</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- collapse three end -->
+
+                            <div class="card mb-0">
+                                <a data-toggle="collapse" href="#collapseThrees" class="faq collapsed" aria-expanded="false" aria-controls="collapseThrees">
+                                    <div class="card-header text-dark" id="headingThree">
+                                        <h6 class="m-0 font-size-16">Hobbies *</h6>
+                                    </div>
+                                </a>
+                                <div id="collapseThrees" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Add name and pick icon which is apt for your Hobbies. You can edit it anytime</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- collapse three end -->
+
+                            <div class="card">
+                                <a data-toggle="collapse" href="#collapseFour" class="faq collapsed" aria-expanded="false" aria-controls="collapseFour">
+                                    <div class="card-header text-dark" id="headingFour">
+                                        <h6 class="m-0 font-size-16">Portfolio</h6>
+                                    </div>
+                                </a>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Showcase your talent with proof. Add category like drawing, editing, projects etc.. Then go to portfolio and photo with optional description.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- collapse four end -->
+
+                            <div class="card">
+                                <a data-toggle="collapse" href="#collapseFive" class="faq collapsed" aria-expanded="false" aria-controls="collapseFive">
+                                    <div class="card-header text-dark" id="headingFour">
+                                        <h6 class="m-0 font-size-16">Social Links</h6>
+                                    </div>
+                                </a>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Share your profile with this social links.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- collapse five end -->
+
+                            <div class="card">
+                                <a data-toggle="collapse" href="#collapseSix" class="faq collapsed" aria-expanded="false" aria-controls="collapseSix">
+                                    <div class="card-header text-dark" id="headingFour">
+                                        <h6 class="m-0 font-size-16">CV Design</h6>
+                                    </div>
+                                </a>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Create your own design. Pick color, theme, animation. Status will be set active only if you add all * fields. If you want to check without publish set status to editing. once status is yes the resume will be set public </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <a data-toggle="collapse" href="#collapseSeven" class="faq collapsed" aria-expanded="false" aria-controls="collapseSeven">
+                                    <div class="card-header text-dark" id="headingFour">
+                                        <h6 class="m-0 font-size-16">Tips</h6>
+                                    </div>
+                                </a>
+                                <div id="collapseSeven" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Tick style in skill dont have percentage. So you will use it for strength and weakness. tick = strength, cross = weakness, tick symbol is default and 5 is for cross. Anytime you can view instruction. this is available on top!!. Hope you will like this</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- collapse five end -->
+                        </div>
+                        <!-- end accordian -->
+                    </div>
+
+                </div>
+                <!-- end row -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->  
+
+
+{% endblock %}

@@ -1,40 +1,22 @@
-from flask import Flask, render_template
+from application import create_app
+from hashids import Hashids
+from application import Config
+from flask import render_template
 
-app = Flask(__name__)
+app = create_app()
 
-@app.route('/')
-def home():
-    title = ['Resume', '']
-    return render_template('home.html', title=title)
-
-@app.route('/cv')
-def cv():
-    title = ['Resume', '']
-    return render_template('cv.html', title=title)
+hashids = Hashids(salt=Config.SECRET_URLSALT, min_length=16)
 
 
-@app.route('/login')
-def login():
-    title = ['Login', '']
-    return render_template('login.html', title=title)
+@app.template_filter('urlencrypt')
+def urlencrypt(value):
+    encrypt = hashids.encode(value)
+    return encrypt
 
 
-@app.route('/register')
-def register():
-    title = ['Register', '']
-    return render_template('register.html', title=title)
-
-@app.route('/logout')
-def logout():
-    title = ['logout', '']
-    return render_template('logout.html', title=title)
-
-
-@app.route('/dashboard')
-def dashboard():
-    title = ['Dashboard', '']
-    return render_template('dashboard.html', title=title)
-
+@app.errorhandler(404)
+def resource_not_found(e):
+    return render_template('page404.html', etype='404', message='Sorry Page Not Found')
 
 
 if __name__ == "__main__":

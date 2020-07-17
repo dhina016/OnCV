@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+            <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+        
+
+        
+                                        <form class="custom-validation" action="" method="POST">
+                                            
+                                            <div class="form-group">
+                                                <label>Dribble</label>
+                                                <div>
+                                                    <input parsley-type="url" type="url" name="dribble" class="form-control" placeholder="Dribble URL" value="{% if data.dribble %}{{ data.dribble }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Twitter</label>
+                                                <div>
+                                                    <input parsley-type="url" type="url" name="twitter" class="form-control" placeholder="Twitter URL" value="{% if data.twitter %}{{ data.twitter }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Github</label>
+                                                <div>
+                                                    <input parsley-type="url" type="url" name="github" class="form-control" placeholder="Github URL" value="{% if data.github %}{{ data.github }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Facebook</label>
+                                                <div>
+                                                    <input parsley-type="url" type="url" name="facebook" class="form-control" placeholder="Facebook URL" value="{% if data.facebook %}{{ data.facebook }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Instagram</label>
+                                                <div>
+                                                    <input parsley-type="url" type="url" name="instagram" class="form-control" placeholder="Instagram URL" value="{% if data.instagram %}{{ data.instagram }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Linked IN</label>
+                                                <div>
+                                                    <input parsley-type="url" type="url" name="linkedin" class="form-control" placeholder="LinkedIN URL" value="{% if data.linkedin %}{{ data.linkedin }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Whatsapp</label>
+                                                <div>
+                                                    <input parsley-type="url" type="url" name="whatsapp" class="form-control" placeholder="Whatsapp Number" value="{% if data.whatsapp %}{{ data.whatsapp }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Youtube</label>
+                                                <div>
+                                                    <input parsley-type="url" type="url" name="youtube" class="form-control" placeholder="Youtube Link" value="{% if data.youtube %}{{ data.youtube }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Stackoverflow</label>
+                                                <div>
+                                                    <input parsley-type="url" type="url" name="stackoverflow" class="form-control" placeholder="Stackoverflow URL" value="{% if data.stackoverflow %}{{ data.stackoverflow }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Website</label>
+                                                <div>
+                                                    <input parsley-type="url" type="url" name="website" class="form-control" placeholder="Website URL" value="{% if data.website %}{{ data.website }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mb-0">
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
+                                                        Submit
+                                                    </button>
+                                                    <button type="reset" class="btn btn-secondary waves-effect">
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+        
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+    
+                        </div> <!-- end row -->    
+{% endblock %}

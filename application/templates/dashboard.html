@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Messages Recieved</h4>
+                {% if data %}
+                    {% for message, user in data %}
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="{{ color[loop.index0%6] }}">
+                                <div class="card-body">
+                                    <blockquote class="card-blockquote mb-0">
+                                        <p>{{ message.message }}</p>
+                                        <footer class="blockquote-footer text-white font-12">
+                                            Send by <cite title="Source Title"><a class="text-secondary" href="{{ url_for('home.cv', name=user.username) }}">{{ user.username }} </a> </cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card text-white bg-dark">
+                                <div class="card-body">
+                                    <blockquote class="card-blockquote mb-0">
+                                        <p>No messages recieved</p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Messages Sent</h4>
+                    {% if data2 %}
+
+                    {% for message, user in data2 %}
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="{{ color[(loop.index0+3)%6] }}">
+                                <div class="card-body">
+                                    <blockquote class="card-blockquote mb-0">
+                                        <p>{{ message.message }}</p>
+                                        <footer class="blockquote-footer text-white font-12">
+                                            Send : <cite title="Source Title">{% if message.seen %} Seen {% else %} Not Yet Seen {% endif %}  </cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    {% else %}
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card text-white bg-dark">
+                                <div class="card-body">
+                                    <blockquote class="card-blockquote mb-0">
+                                        <p>No messages sent </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

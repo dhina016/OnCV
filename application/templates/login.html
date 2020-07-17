@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="account-pages my-5 pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-5">
+                    <div class="card overflow-hidden">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                          {% for category, message in messages %}
+                          {% if category == 'message' %}
+                          <div class="alert alert-danger bg-danger text-white border-0" role="alert"><strong>{{ message }}</strong> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> </div>
+                          {% else %}
+                          <div class="alert alert-{{ category }} bg-{{ category }} text-white border-0" role="alert"><strong>{{ message }}</strong> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> </div>
+                          {% endif %}
+                          {% endfor %}
+                        {% endif %}
+                      {% endwith %}
+                        <div class="bg-primary">
+                            <div class="text-primary text-center p-4">
+                                <h5 class="text-white font-size-20">Welcome Back !</h5>
+                                <p class="text-white-50">Sign in to continue to OnCV.</p>
+                                <a href="#" class="logo logo-admin">
+                                    <img src="{{ url_for( 'static', filename='assets/images/logo.png') }}" height="60" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card-body p-4">
+                            <div class="p-3">
+                                <form class="custom-validation mt-4" action="" method="post">
+
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" minlength="5" required>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" name="remember" id="customControlInline" checked>
+                                                <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 text-right">
+                                            <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-5 text-center">
+                        <p>Don't have an account ? <a href="{{ url_for('home.register') }}" class="font-weight-medium text-primary"> Signup now </a> </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

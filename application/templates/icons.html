@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<title>OnCV</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="description" content="OnCV - Create Your Resume or CV online" />
+	<meta name="keywords" content="vcard, resposnive, resume, personal, card, cv, cards, portfolio, online, OnCV, oncv" />
+	<meta name="author" content="dhina016" />
+	
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/template-colors/all.css' ) }}">
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/basic.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/layout.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/blogs.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/magnific-popup.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/animate.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/owl.carousel.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/ionicons.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/template-colors/pink.css' ) }}" />	
+	
+	<link rel="shortcut icon" href="{{ url_for( 'static', filename='assets/images/favicon.ico' ) }}">
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/animation_3.css' ) }}" />
+</head>
+
+<body>
+
+	<div class="row mt-4">
+		<div class="container-fluid">
+			<div class="row" style="text-align:center">
+					  <h1 class="display-4">LIST OF ICON</h1>
+					  <p class="lead">Refer the icons here</p>
+			</div>
+			<div class="row" id="icons">
+			</div>
+		</div>
+	</div>
+	<!--
+		jQuery Scripts
+	-->
+	<script src="{{ url_for( 'static', filename='resume/js/jquery.min.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/jquery.validate.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/jquery.magnific-popup.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/imagesloaded.pkgd.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/isotope.pkgd.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/jquery.slimscroll.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/owl.carousel.js' ) }}"></script>
+	
+	<!--
+		Main Scripts
+	-->
+	<script src="{{ url_for( 'static', filename='resume/js/scripts.js' ) }}"></script>
+	
+	<script>
+		$(document).ready(function(){
+	
+			load_state('icons');
+			function load_state(id, parent_id)
+			{
+				var html_code = '';
+				$.getJSON('static/icons.json', function(data){
+			
+				$.each(data, function(key, value){
+				{
+					html_code += '<div class="col col-d-2 col-t-3 col-m-4" style="text-align:center"><h1 class="display-1"><i class="ion '+value.icon+'"></i></h1>'+value.icon+'</div>';
+				}
+				});
+				$('#'+id).html(html_code);
+				});
+			}
+	
+			function myFunction(value) {
+				var copyText = value
+			  
+				copyText.select();
+				copyText.setSelectionRange(0, 99999); 
+
+				document.execCommand("copy");
+
+				alert("Copied the text: " + copyText.value);
+			  }
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title">OnCV - Create Resume Online</li>
+                            
+                            <li>
+                                <a href="{{  url_for('user.dashboard')}}" class="waves-effect">
+                                    <i class="ti-home"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ti-help"></i>
+                                    <span>About</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{  url_for('user.about')}}">Add About</a></li>
+                                    <li><a href="{{  url_for('user.editabout')}}">Edit About</a></li>
+                                    <li><a href="{{  url_for('user.picture')}}">Update Profile Picture</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ti-agenda"></i>
+                                    <span>Education</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{  url_for('user.education')}}">Add Education</a></li>
+                                    <li><a href="{{  url_for('user.manageeducation')}}">Manage Education</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ti-medall"></i>
+                                    <span>Skill</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{  url_for('user.skillcategory')}}">Add Category</a></li>
+                                    <li><a href="{{  url_for('user.manageskillcategory')}}">Manage Categories</a></li>
+                                    <li><a href="{{  url_for('user.skill')}}">Add Skill</a></li>
+                                    <li><a href="{{  url_for('user.manageskill')}}">Manage Skill</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ti-headphone-alt"></i>
+                                    <span>Hobbies</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{  url_for('user.hobbies')}}">Add Hobby</a></li>
+                                    <li><a href="{{  url_for('user.managehobbies')}}">Manage Hobbies</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ti-gallery"></i>
+                                    <span>Portfolio</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{  url_for('user.portfoliocategory')}}">Add Category</a></li>
+                                    <li><a href="{{  url_for('user.manageportfoliocategory')}}">Manage Categories</a></li>
+                                    <li><a href="{{  url_for('user.portfolio')}}">Add Portfolio</a></li>
+                                    <li><a href="{{  url_for('user.manageportfolio')}}">Manage Portfolio</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{{  url_for('user.sociallink')}}" class="waves-effect">
+                                    <i class="ti-github"></i>
+                                    <span>Social Links</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{  url_for('user.design')}}" class="waves-effect">
+                                    <i class="ti-layout-sidebar-right"></i>
+                                    <span>CV Design</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">

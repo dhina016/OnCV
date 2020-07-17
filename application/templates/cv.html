@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<title>OnCV</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="description" content="OnCV - Create Your Resume or CV online" />
+	<meta name="keywords" content="vcard, resposnive, resume, personal, card, cv, cards, portfolio, online, OnCV, oncv" />
+	<meta name="author" content="dhina016" />
+
+	<link rel="shortcut icon" href="{{ url_for( 'static', filename='assets/images/favicon.ico' ) }}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/template-colors/all.css' ) }}">
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/basic.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/layout.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/blogs.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/magnific-popup.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/animate.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/owl.carousel.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/ionicons.css' ) }}" />
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/template-colors/' ) }}{{ design.color }}.css" />	
+	{% if design.theme == 'dark' %}
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/dark.css' ) }}" />
+	{% endif %}
+	
+	<link rel="stylesheet" href="{{ url_for( 'static', filename='resume/css/animate/' ) }}{{ design.animation }}.css" />
+</head>
+
+<body>
+	<div class="page">
+		
+		<!-- preloader -->
+		<div class="preloader">
+			<div class="centrize full-width">
+				<div class="vertical-center">
+					<div class="spinner">
+						<div class="double-bounce1"></div>
+						<div class="double-bounce2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- background -->
+		<div class="background"></div>
+
+		<!--
+			Container
+		-->
+		<div class="container opened" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
+
+			<!--
+				Header
+			-->
+
+			<header class="header">
+				<!-- menu -->
+				<div class="top-menu">
+					<ul>
+						<li class="active">
+							<a href="#about-card">
+								<span class="icon ion-person"></span>
+								<span class="link">About</span>
+							</a>
+						</li>
+						<li>
+							<a href="#resume-card">
+								<span class="icon ion-android-list"></span>
+								<span class="link">Resume</span>
+							</a>
+						</li>
+						{% if portfolio %}
+						<li>
+							<a href="#works-card">
+								<span class="icon ion-paintbrush"></span>
+								<span class="link">Works</span>
+							</a>
+						</li>
+						{% endif %}
+						<li>
+							<a href="#contacts-card">
+								<span class="icon ion-at"></span>
+								<span class="link">Contact</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</header>
+
+			<!--
+				Card - Started
+			-->
+			<div class="card-started" id="home-card">
+
+				<!--
+					Profile
+				-->
+				<div class="profile">
+
+					<!-- profile image -->
+					<div class="slide" style="background-image: url( {{ url_for( 'static', filename='files/background/'+user.background_pic ) }} );"></div>
+
+					<!-- profile photo -->
+					<div class="image">
+						<img style="width: 150px; height: 150px;" src="{{ url_for( 'static', filename='files/profile/' ) }}{{ user.profile_pic }}" alt="" />
+					</div>
+
+					<!-- profile titles -->
+					<div class="title">{{ user.name }}</div>
+					<div class="subtitle">{{ about.aoi }}</div>
+
+					<div class="social">
+						{% if social.dribble %}
+								<a target="_blank" href="{{ social.dribble }}"><span class="fab fa-dribbble"></span></a>
+						{% endif %}
+						{% if social.twitter %}
+						<a target="_blank" href="{{ social.twitter }}"><span class="fab fa-twitter"></span></a>
+						{% endif %}
+						{% if social.github %}
+						<a target="_blank" href="{{ social.github }}"><span class="fab fa-github"></span></a>
+						{% endif %}
+						{% if social.spotify %}
+						<a target="_blank" href="{{ social.spotify }}"><span class="fab fa-spotify"></span></a>
+						{% endif %}
+						{% if social.facebook %}
+						<a target="_blank" href="{{ social.facebook }}"><span class="fab fa-facebook"></span></a>
+						{% endif %}
+						{% if social.instagram %}
+						<a target="_blank" href="{{ social.instagram }}"><span class="fab fa-instagram"></span></a>
+						{% endif %}
+						{% if social.linkedin %}
+						<a target="_blank" href="{{ social.linkedin }}"><span class="fab fa-linkedin"></span></a>
+						{% endif %}
+						{% if social.whatsapp %}
+						<a target="_blank" href="{{ social.whatsapp }}"><span class="fab fa-whatsapp"></span></a>
+						{% endif %}
+						{% if social.youtube %}
+						<a target="_blank" href="{{ social.youtube }}"><span class="fab fa-youtube"></span></a>
+						{% endif %}
+						{% if social.stackoverflow %}
+						<a target="_blank" href="{{ social.stackoverflow }}"><span class="fab fa-stack-overflow"></span></a>
+						{% endif %}
+						{% if social.website %}
+						<a target="_blank" href="{{ social.website }}"><span class="ion ion-social-wordpress"></span></a>
+						{% endif %}
+							</div>
+					<!-- profile buttons -->
+					<div class="lnks">
+						<a href="{% if about.resume %}{{ about.resume }}{% endif %}" class="lnk">
+							<span class="text">Download CV</span>
+							<span class="ion ion-archive"></span>
+						</a>
+						<a href="#" class="lnk discover">
+							<span class="text">Contact Me</span>
+							<span class="arrow"></span>
+						</a>
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- 
+				Card - About
+			-->
+			<div class="card-inner animated active" id="about-card">
+				<div class="card-wrap">
+
+					<div class="content about">
+
+						<div class="title">About Me</div>
+
+						<div class="row">
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="text-box">
+									<p>
+										{{ about.career }}
+									</p>
+								</div>
+								<div class="info-list">
+									<ul>
+										<li><strong>Age . . . .</strong> {{ about.age }}</li>
+										<li><strong>DOB . . . .</strong> {{ about.dob.strftime('%b %d, %Y') }}</li>
+										<li><strong>State . . . .</strong> {{ about.state | capitalize }}</li>
+										<li><strong>City . . . .</strong> {{ about.city | capitalize }}</li>
+									</ul>
+								</div>
+							</div>
+							<div class="clear"></div> 
+						</div>
+
+					</div>
+
+					<div class="content services">
+
+						<div class="title">My Hobbies</div>
+
+						<div class="row service-items border-line-v">
+
+					{% for detail in hobbies %}
+							<div class="col col-d-6 col-t-6 col-m-6 border-line-h">
+								<div class="service-item">
+									<div class="icon"><span class="ion {{ detail.icon }}"></span></div>
+									<div class="name">{{ detail.name }}</div>
+								</div>
+							</div>
+					{% endfor %}
+
+							<div class="clear"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="card-inner" id="resume-card">
+				<div class="card-wrap">
+
+					<div class="content resume">
+
+						<div class="title">Resume</div>
+
+						<div class="row">
+						{% if education %}
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="resume-title border-line-h">
+										<div class="icon"><i class="ion ion-university"></i></div>
+									<div class="name">Education</div>
+								</div>
+								<div class="resume-items">
+									{% for detail in education %}
+									<div class="resume-item border-line-h">
+										<div class="date">{{ detail.year }}</div>
+										<div class="name">{{ detail.name }}</div>
+										<div class="company">{{ detail.location }}</div>
+										<p>
+											{{ detail.description }}
+										</p>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						{% endif %}
+						{% if experience %}
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="resume-title border-line-h">
+										<div class="icon"><i class="ion ion-briefcase"></i></div>
+									<div class="name">Experience</div>
+								</div>
+								<div class="resume-items">
+									{% for detail in experience %}
+									<div class="resume-item border-line-h">
+										<div class="date">{{ detail.year }}</div>
+										<div class="name">{{ detail.name }}</div>
+										<div class="company">{{ detail.location }}</div>
+										<p>
+											{{ detail.description }}
+										</p>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						{% endif %}
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+					<!--
+						Skills
+					-->
+					<div class="content skills">
+
+						<!-- title -->
+						<div class="title">My Skills</div>
+					
+						<!-- content -->
+						<div class="row">
+						
+						{% if skill %}
+						{% set col = 6 %}
+							{% for s in scategory %}
+							{% if loop.index == loop.length and loop.length%2 != 0 %} {% set col = 12 %} {% endif %}
+								{% if s.selection == 'line' %}
+									<div class="col col-d-{{ col }} col-t-{{ col }} col-m-12 border-line-v">
+										<div class="skills-list">
+											<div class="skill-title border-line-h">
+												<div class="icon"><i class="ion {{ s.icon }}"></i></div>
+												<div class="name">{{ s.name }}</div>
+											</div>
+											<ul>
+												{% for detail in skill %}
+													{% if detail.cid == s.id %}
+														<li class="border-line-h"> 
+															<div class="name">{{ detail.name }}</div>
+															<div class="progress">
+																<div class="percentage" style="width:{{ detail.percentage }}%;"></div>
+															</div>
+														</li>
+														{% endif %}
+												{% endfor %}
+											</ul>
+										</div>
+									</div>
+								{% endif %}
+
+								{% if s.selection == 'dotted' %}
+									<div class="col col-d-{{ col }} col-t-{{ col }} col-m-12 border-line-v">
+										<div class="skills-list dotted">
+											<div class="skill-title border-line-h">
+												<div class="icon"><i class="ion {{ s.icon }}"></i></div>
+												<div class="name">{{ s.name }}</div>
+											</div>
+											<ul>
+												{% for detail in skill %}
+													{% if detail.cid == s.id %}
+													<li class="border-line-h"> 
+														<div class="name">{{ detail.name }}</div>
+														<div class="progress">
+															<div class="percentage" style="width:{{ detail.percentage }}%;"></div>
+														</div>
+													</li>
+													{% endif %}
+												{% endfor %}
+											</ul>
+										</div>
+									</div>
+								{% endif %}
+
+								{% if s.selection == 'circle' %}
+									<div class="col col-d-{{ col }} col-t-{{ col }} col-m-12 border-line-v">
+										<div class="skills-list circles">
+											<div class="skill-title border-line-h">
+												<div class="icon"><i class="ion {{ s.icon }}"></i></div>
+												<div class="name">{{ s.name }}</div>
+											</div>
+											<ul>
+												{% for detail in skill %}
+													{% if detail.cid == s.id %}
+														<li> 
+															<div class="name">{{ detail.name }}</div>
+															<div class="progress p{{ detail.percentage }}">
+																<span>{{ detail.percentage }}%</span>
+															</div>
+														</li>
+													{% endif %}
+												{% endfor %}
+											</ul>
+										</div>
+									</div>
+									{% endif %}
+
+									{% if s.selection == 'tick' %}
+										<div class="col col-d-{{ col }} col-t-{{ col }} col-m-12 border-line-v">
+											<div class="skills-list list">
+												<div class="skill-title border-line-h">
+													<div class="icon"><i class="ion {{ s.icon }}"></i></div>
+													<div class="name">{{ s.name }}</div>
+												</div>
+												<ul>
+													{% for detail in skill %}
+														{% if detail.cid == s.id and detail.percentage != 5 %}
+															<li> 
+																<div class="name">{{ detail.name }}</div>
+															</li>
+														{% endif %}
+													{% endfor %}
+													{% for detail in skill %}
+														{% if detail.cid == s.id and detail.percentage == 5 %}
+															<li> 
+																<div class="name2">{{ detail.name }}</div>
+															</li>
+														{% endif %}
+													{% endfor %}
+												</ul>
+											</div>
+										</div>
+									{% endif %}
+
+							{% endfor %}
+						{% endif %}
+							<div class="clear"></div>
+						</div>
+						
+					</div>
+
+				</div>
+			</div>
+
+			<!--
+				Card - Works
+			-->
+			<div class="card-inner" id="works-card">
+				<div class="card-wrap">
+
+					<!--
+						Works
+					-->
+					<div class="content works">
+
+						<!-- title -->
+						<div class="title">Recent Works</div>
+
+						<!-- filters -->
+						<div class="filter-menu filter-button-group">
+							<div class="f_btn active">
+								<label><input type="radio" name="fl_radio" value="grid-item" />All</label>
+							</div>
+							{% if pcategory %}
+								{% for detail in pcategory %}
+									<div class="f_btn">
+										<label><input type="radio" name="fl_radio" value="{{ detail.name }}" />{{ detail.name }}</label>
+									</div>
+								{% endfor %}
+							{% endif %}
+						</div>
+
+						<!-- content -->
+						<div class="row grid-items border-line-v">
+
+				{% if pcategory %}
+					{% for detail in pcategory %}
+							{% for port in portfolio %}
+								{% if detail.id == port.cid %}
+									{% if not port.description %}
+									<div class="col col-d-6 col-t-6 col-m-12 grid-item {{ detail.name }} border-line-h">
+										<div class="box-item">
+											<div class="image">
+												<a href="{{ url_for( 'static', filename='files/portfolio/'+port.image ) }}" class="has-popup-image">
+													<img src="{{ url_for( 'static', filename='files/portfolio/'+port.image ) }}" alt="" />
+													<span class="info">
+														<span class="ion ion-image"></span>
+													</span>
+												</a>
+											</div>
+											<div class="desc">
+												<a href="{{ url_for( 'static', filename='files/portfolio/'+port.image ) }}" class="name has-popup-image">{{ port.name }}</a>
+												<div class="category">{{ detail.name }}</div>
+											</div>
+										</div>
+									</div>
+								{% else %}
+									<div class="col col-d-6 col-t-6 col-m-12 grid-item {{ detail.name }} border-line-h">
+										<div class="box-item">
+											<div class="image">
+												<a href="#popup-{{ loop.index}}" class="has-popup-media">
+													<img src="{{ url_for( 'static', filename='files/portfolio/'+port.image ) }}" alt="" />
+													<span class="info">
+														<span class="ion ion-images"></span>
+													</span>
+												</a>
+											</div>
+											<div class="desc">
+												<a href="#popup-{{ loop.index}}" class="name has-popup-media">{{ port.name }}</a>
+												<div class="category">{{ detail.name }}</div>
+											</div>
+											<div id="popup-{{ loop.index}}" class="popup-box mfp-fade mfp-hide">
+												<div class="content">
+													<div class="image">
+														<img src="{{ url_for( 'static', filename='files/portfolio/'+port.image ) }}" alt="">
+													</div>
+													<div class="desc">
+														<div class="post-box">
+															<h1>{{ port.name }}</h1>						
+															<div class="blog-detail">{{ detail.name }}</div>
+															<div class="blog-content">
+																<blockquote>
+																	{{ port.description }}
+																</blockquote>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
+				{% endif %}
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<!--
+				Card - Contacts
+			-->
+			<div class="card-inner contacts" id="contacts-card">
+				<div class="card-wrap">
+
+					<!--
+						Conacts Info
+					-->
+					<div class="content contacts">
+
+						<!-- title -->
+						<div class="title">Get in Touch</div>
+
+						<!-- content -->
+						<div class="row">
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="info-list">
+									<ul>
+										<li ><strong>Address . . </strong> {{ about.state | capitalize }}, {{ about.city | capitalize }}</li>
+										<li><strong>Phone . . </strong> {{ about.phone }}</li>
+										<li style="width: auto;"><strong>Email . . </strong> {{ user.email }} </li>
+									</ul>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+					<!--
+						Contact Form
+					-->
+					<div class="content contacts">
+
+						<!-- title -->
+						<div class="title">Contact Form</div>
+
+						<!-- content -->
+						<div class="row">
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="contact_form">
+									<form action="" method="post">
+										<div class="row">
+											<div class="col col-d-12 col-t-12 col-m-12">
+												<div class="group-val">
+													<textarea name="message" placeholder="Your Message"></textarea>
+													<input type="hidden" name="id" value="{{ user.id }}"/>
+												</div>
+											</div>
+										</div>
+										{% if current_user.is_authenticated %}
+											{% if current_user.id == user.id %}
+											<div class="alert-success" style="display: block; color: #6cde5d;">
+												<p>Can't message to yourself</p>
+											</div>
+											{% else %}
+											<div class="align-left">
+												<button type="submit" class="button">
+													<span class="text">Send Message</span>
+													<span class="arrow"></span>
+												</button>
+											</div>
+											{% endif %}
+										{% else %}
+										<div class="alert-success" style="display: block; color: #ff3d3d;">
+											<p>Login to send message</p>
+										</div>
+										{% endif %}
+									</form>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<!--
+		jQuery Scripts
+	-->
+	<script src="{{ url_for( 'static', filename='resume/js/jquery.min.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/jquery.validate.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/jquery.magnific-popup.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/imagesloaded.pkgd.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/isotope.pkgd.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/jquery.slimscroll.js' ) }}"></script>
+	<script src="{{ url_for( 'static', filename='resume/js/owl.carousel.js' ) }}"></script>
+	
+	<!--
+		Main Scripts
+	-->
+	<script src="{{ url_for( 'static', filename='resume/js/scripts.js' ) }}"></script>
+	
+</body>
+
+</html>

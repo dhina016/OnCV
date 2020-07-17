@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if data %}
+            <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form class="custom-validation" action="" method="POST">
+                                            <div class="form-group">
+                                                <label>Category</label>
+                                                <select class="form-control" required name="category">
+                                                    <option value="">Select category</option>
+                                                    <option value="line" {% if data.selection == 'line' %} selected="selected" {% endif %} >Line</option>
+                                                    <option value="dotted" {% if data.selection == 'dotted' %} selected="selected" {% endif %}>Dotted</option>
+                                                    <option value="circle" {% if data.selection == 'circle' %} selected="selected" {% endif %}>Circle</option>
+                                                    <option value="tick" {% if data.selection == 'tick' %} selected="selected" {% endif %}>Tick</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <div>
+                                                    <input type="text" name="name"
+                                                            class="form-control" required
+                                                            placeholder="Eg: Technical or Language etc" value="{{ data.name }}"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Position</label>
+                                                <div>
+                                                    <input data-parsley-type="number" type="text" name="position"
+                                                            class="form-control" required min="1"
+                                                            placeholder="Enter Position" value="{{ data.position }}"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Select Icons</label>
+                                                <select id="icons" name="icon" class="js-states form-control">
+                                                  </select>
+                                            </div>
+                                            <div class="form-group mb-0">
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
+                                                        Submit
+                                                    </button>
+                                                    <button type="reset" class="btn btn-secondary waves-effect">
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+        
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+    
+                        </div> <!-- end row -->   
+                        {% else %}
+
+                        <div class="content-center w-100">
+                                <div class="container">
+                                    <div class="card mo-mt-2">
+                                        <div class="card-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-4 ml-auto">
+                                                    <div class="ex-page-content">
+                                                        <h1 class="text-dark display-1 mt-4">404!</h1>
+                                                        <h4 class="mb-4">Sorry, page not found</h4>
+                                                    </div>
+                                        
+                                                </div>
+                                                <div class="col-lg-5 mx-auto">
+                                                    <img src="{{ url_for('static', filename='assets/images/error.png') }}" alt="" class="img-fluid mx-auto d-block">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end card -->
+                                </div>
+                                <!-- end container -->
+                        </div>
+                        
+                        {% endif %} 
+{% endblock %}

@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <div class="topnav mt-0 position-static">
+                <nav class="navbar navbar-light navbar-expand topnav-menu">
+                    <a href="#" class="navbar-brand">OnCV</a>
+                    <div class="collapse navbar-collapse" id="topnav-menu-content">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('home.main') }}">
+                                    <i class="ion ion-md-home mr-2"></i>Home
+                                </a>
+                            </li>
+                            {% if current_user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('user.dashboard') }}">
+                                    <i class="ion ion ion-md-heart mr-2"></i>Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('home.logout') }}">
+                                    <i class="ion ion-md-log-out mr-2"></i>Logout
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('home.login') }}">
+                                    <i class="ion ion-md-log-in mr-2"></i>Login
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('home.register') }}">
+                                    <i class="ion ion-ios-contact mr-2"></i>Register
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <section class="my-5 mb-3">
+            <div class="container-alt container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="home-wrapper">
+                                    {% with messages = get_flashed_messages(with_categories=true) %}
+                                    {% if messages %}
+                                      {% for category, message in messages %}
+                                        <div class="alert alert-{{ category }} bg-{{ category }} text-white border-0" role="alert"><strong>{{ message }}</strong> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> </div>
+                                      {% endfor %}
+                                    {% endif %}
+                                  {% endwith %}
+                            <div class="maintenance-img">
+                                <img src="{{ url_for( 'static', filename='assets/images/maintenance.png') }}" alt="" class="img-fluid mx-auto d-block">
+                            </div>
+                            <h3 class="mt-4">OnCV</h3>
+                            <p>Create Your Resume or CV online</p>
+
+                            <div class="row">
+                                {% if data %}
+                                    {% for user, social, about in data %}
+                                            <div class="col-xl-4 col-md-6">
+                                                <div class="card directory-card">
+                                                    <div class="card-body">
+                                                        <div class="media">
+                                                            <img src="{{ url_for( 'static', filename='files/profile/' ) }}{{ user.profile_pic }}" alt="" class="img-fluid img-thumbnail rounded-circle avatar-lg">
+                                                            <div class="media-body ml-3">
+                                                                <a href="{{ url_for('home.cv', name=user.username) }}" class="text-primary font-size-22 mt-0 mb-1">{{ user.name }}</a>
+                                                                <p class="font-size-12 font-weight-bold mb-2">{{ about.aoi }}</p>
+                                                                <p class="font-size-12 mb-0">{{ user.email }}</p>
+                                                            </div>
+                                                            <ul class="list-unstyled social-links float-right">
+                                                                {% set count = 0 %}
+                                                                {% if count < 2 and social.dribble %} {% set count = count + 1 %}
+								                                <li><a href="{{ social.dribble }}" class="btn-secondary"><i class="mdi mdi-dribbble"></i></a></li>
+                                                                {% endif %}
+                                                                {% if count < 2 and social.twitter %} {% set count = count + 1 %}
+                                                                <li><a href="{{ social.twitter }}" class="btn-info"><i class="mdi mdi-twitter"></i></a></li>
+                                                                {% endif %}
+                                                                {% if count < 2 and social.github %} {% set count = count + 1 %}
+                                                                <li><a href="{{ social.github }}" class="btn-dark"><i class="mdi mdi-github-circle"></i></a></li>
+                                                                {% endif %}
+                                                                {% if count < 2 and social.spotify %} {% set count = count + 1 %}
+                                                                <li><a href="{{ social.spotify }}" class="btn-success"><i class="mdi mdi-spotify"></i></a></li>
+                                                                {% endif %}
+                                                                {% if count < 2 and social.facebook %} {% set count = count + 1 %}
+                                                                <li><a href="{{ social.facebook }}" class="btn-primary"><i class="mdi mdi-facebook"></i></a></li>
+                                                                {% endif %}
+                                                                {% if count < 2 and social.instagram %} {% set count = count + 1 %}
+                                                                <li><a href="{{ social.instagram }}" class="btn-danger"><i class="mdi mdi-instagram"></i></a></li>
+                                                                {% endif %}
+                                                                {% if count < 2 and social.linkedin %} {% set count = count + 1 %}
+                                                                <li><a href="{{ social.linkedin }}" class="btn-info"><i class="mdi mdi-linkedin"></i></a></li>
+                                                                {% endif %}
+                                                                {% if count < 2 and social.whatsapp %} {% set count = count + 1 %}
+                                                                <li><a href="{{ social.whatsapp }}" class="btn-success"><i class="mdi mdi-whatsapp"></i></a></li>
+                                                                {% endif %}
+                                                                {% if count < 2 and social.youtube %} {% set count = count + 1 %}
+                                                                <li><a href="{{  social.youtube  }}" class="btn-danger"><i class="mdi mdi-youtube"></i></a></li>
+                                                                {% endif %}
+                                                                {% if count < 2 and social.stackoverflow %} {% set count = count + 1 %}
+                                                                <li><a href="{{ social.stackoverflow }}" class="btn-secondary"><i class="mdi mdi-stack-overflow"></i></a></li>
+                                                                {% endif %}
+                                                                {% if count < 2 and social.website %}
+                                                                <li><a href="{{ social.website }}" class="btn-primary"><i class="mdi mdi-wordpress"></i></a></li>
+                                                                {% endif %}
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    {% endfor %}
+                                {% else %}
+                                <div class="content-center w-100">
+                                    <div class="container">
+                                        <div class="card mo-mt-2">
+                                            <div class="card-body">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-4 ml-auto">
+                                                        <div class="ex-page-content">
+                                                            <h1 class="text-dark display-1 mt-4">No CV</h1>
+                                                            <h4 class="mb-4">Sorry, No CV at the moment</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-5 mx-auto">
+                                                        <img src="{{ url_for('static', filename='assets/images/error.png') }}" alt="" class="img-fluid mx-auto d-block">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end card -->
+                                    </div>
+                                    <!-- end container -->
+                            </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        © <script>document.write(new Date().getFullYear())</script> Socalled<span class="d-none d-sm-inline-block"> -Made with <i class="mdi mdi-heart text-danger"></i> by Socalled.</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        {% endblock %}
