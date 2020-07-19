@@ -13,8 +13,8 @@ class Config:
     UPLOAD_FOLDER = 'static/files'
     MAX_CONTENT_LENGTH = 1 * 1024 * 1024
     MAIL_SERVER = 'smtp.gmail.com'
-    MAIL_USERNAME = 'logesh732116104026@gmail.com'
-    MAIL_PASSWORD = '******'
+    MAIL_USERNAME = '******'
+    MAIL_PASSWORD = '*****'
     MAIL_PORT = 465
     MAIL_USE_SSL = True
     MAIL_USE_TLS = False

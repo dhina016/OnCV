@@ -3,11 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from application.config import Config
 from flask_login import LoginManager
 from flask_mail import Mail
-from flask_images import Images
 
 db = SQLAlchemy()
 mail = Mail()
-images = Images()
 
 
 def create_app(config_class=Config):
@@ -16,7 +14,6 @@ def create_app(config_class=Config):
 
     db.init_app(app)
     mail.init_app(app)
-    images.init_app(app)
 
     login_manager = LoginManager()
     login_manager.login_view = 'home.login'
