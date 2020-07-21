@@ -19,7 +19,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/dhina016/OnCV">
-    <img src="screenshot/logo.png" alt="Logo" width="155" height="35">
+    <img src="application/static/assets/images/logo.png" alt="Logo" width="155" height="35">
   </a>
 
   <h3 align="center">OnCV</h3>
