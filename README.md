@@ -75,16 +75,9 @@ Follow the installation steps to open project without error
 ### Installation
  
 1. Download and extract the project
-<<<<<<< HEAD
 2. I'm using xampp, so you can also use it and Create the database named cv
 3. Download python 3.x and install on your PC. My pc is 64bit so i installed Python3(64bit). Set environmental variable for both python and pip or else you get command not found.
 4. I've used virtual environment. It's not necessary, but using virtual environment is preferable.  
-=======
-2. I'm using xampp, so you can also use it and Create the database
-3. Upload or Import flask.sql in your database. 
-4. Download python 3.x and install on your PC. My pc is 64bit so i installed Python3(64bit). Set environmental variable for both python and pip or else you get command not found.
-5. I've used virtual environment. It's not necessary, but using virtual environment is preferable.  
->>>>>>> eebd80b30dc9c5499caa90c1746edca41fc12700
 Note: You can skip the 5th step if you don't want virtual environment  
 (i) Make sure you've set your python path in environmental variable and then install 
 ```sh
@@ -95,11 +88,7 @@ python -m venv venv
 (ii) I've already created. So now you want to activate it. I'm using windows. so I used CMD. Now open the cmd of your current project folder. My project folder is newsland.
 ```sh
 
-<<<<<<< HEAD
 D:\flask\newsland>venv\Scripts\activate
-=======
-D:\flask\newsland> cd /venv/Scripts/activate
->>>>>>> eebd80b30dc9c5499caa90c1746edca41fc12700
 
 After venv is activated
 
@@ -117,27 +106,16 @@ If not working again activate your venv
 
 For Deactivating,
 
-<<<<<<< HEAD
 D:\flask\newsland>venv\Scripts\deactivate
 
 ```
 5. Install the following requirements by following command.
-=======
-D:\flask\newsland> cd /venv/Scripts/deactivate
-
-```
-6. Install the following requirements by following command.
->>>>>>> eebd80b30dc9c5499caa90c1746edca41fc12700
 ```sh
 
 D:\flask\newsland> pip install -r requirements.txt
 
 ```
-<<<<<<< HEAD
 6. To run the the code, use this command 
-=======
-7. To run the the code, use this command 
->>>>>>> eebd80b30dc9c5499caa90c1746edca41fc12700
 ```sh
 
 D:\flask\newsland>python app.py
@@ -147,11 +125,7 @@ or
 D:\flask\newsland>flask run
 
 ```
-<<<<<<< HEAD
 7. Create DB - BaseURL/dbcreate
-=======
-
->>>>>>> eebd80b30dc9c5499caa90c1746edca41fc12700
 8. If you get any error, make sure you've done following things 
 ```sh
 
@@ -160,64 +134,8 @@ D:\flask\newsland>flask run
 3. Installed all requirements without errors.
 4. I am using 64 bit. If you are using 32 Bit google it and fix it.
 5. Check the server is active or not.
-<<<<<<< HEAD
 7. Everything is done.
 ```
-=======
-6. Imported sql file.
-7. Everything is done.
-```
-9. Admin Login.
-```sh
-url : http://127.0.0.1:5000/admin
-Username => admin,
-Password => 111111,
-
-```
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Newsland is a webapp for posting latest news. This newsland is very simple to use. Images are given below  
-**1.Requirments** :
-![S1][ss1]
-
-**2.Welcome Page** :
-![S1][ss2]
-
-**3.News as Guest** :
-![S1][ss3]
-
-**4.Contact** :
-![S1][ss4]
-
-**5.Register** :
-![S1][ss5]
-
-**6.Login** :
-![S1][ss6]
-
-**7.News as User** :
-![S1][ss7]
-
-**8.Add News** :
-![S1][ss8]
-
-**9.EditNews** :
-![S1][ss9]
-
-**9.Search by title** :
-![S1][ss10]
-
-**10.News as Admin and Pin** :
-![S1][ss11]
-
-**11.Filter by Name** :  
-You can also filter by name, date, category by clicking name, date, category in the news page.
-![S1][ss12]
-
-**12.Logout** :
-![S1][ss13]
->>>>>>> eebd80b30dc9c5499caa90c1746edca41fc12700
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -267,24 +185,3 @@ Project Link: [https://github.com/dhina016/OnCV](https://github.com/dhina016/OnC
 [license-url]: https://github.com/dhina016/OnCV/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/dhina016/
-<<<<<<< HEAD
-
-=======
-=======
-[product-screenshot]: screenshot/bann.png
-[ss1]: screenshot/ss1.png
-[ss2]: screenshot/bann.png
-[ss3]: screenshot/ss2.png
-[ss4]: screenshot/ss3.png
-[ss5]: screenshot/ss4.png
-[ss6]: screenshot/ss5.png
-[ss7]: screenshot/ss6.png
-[ss8]: screenshot/ss7.png
-[ss9]: screenshot/ss8.png
-[ss10]: screenshot/ss9.png
-[ss11]: screenshot/ss10.png
-[ss12]: screenshot/ss11.png
-[ss13]: screenshot/ss12.png
-
-=======
->>>>>>> eebd80b30dc9c5499caa90c1746edca41fc12700
